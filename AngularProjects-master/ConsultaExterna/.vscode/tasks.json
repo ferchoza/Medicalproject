@@ -1,0 +1,13 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Sass Compile",
+            "type": "shell",
+            "command": "node-sass C:\\Users\\diezapza\\DownloadsAngularProjects-master\\AngularProjects-master\\ConsultaExterna\\bower_components\\chartist\\dist\\scss\\Legends.scss  C:\\Users\\diezapza\\DownloadsAngularProjects-master\\AngularProjects-master\\ConsultaExterna\\bower_components\\chartist\\dist\\scss\\Legends.css",
+            "group": "build"
+        }
+    ]
+}

@@ -1,0 +1,206 @@
+.bp-tablehistoricVS {
+    display: grid;
+    grid-template-columns: repeat(var(--col)-1, 1fr);
+    grid-template-rows: repeat(var(--row), 2.5em);
+  }
+  .bp-tablehistoricVS .title-historicVS {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column:var(--coltitle);
+    text-align: center;
+  }
+  .bp-tablehistoricVS .title-historicVS .bp-gridhistoricVS-item {
+    justify-content: center;
+    background-color: #93b74b;
+    color:#ffffff;
+  }
+
+
+  .bp-tablehistoricVS .header-historicVS {
+    display: grid;
+    grid-column: var(--coldata);
+    grid-template-columns: repeat(var(--col), 1fr);
+    text-align: center;
+  }
+  .bp-tablehistoricVS .header-historicVS .bp-gridhistoricVS-item {
+    justify-content: center;
+  }
+  .bp-tablehistoricVS .group-var-historicVS {
+    display: grid;
+    grid-column: 1;
+    grid-row: var(--rowvars);
+    grid-template-rows: repeat(var(--row), 1fr);
+  }
+  .bp-tablehistoricVS .group-var-historicVS .bp-gridhistoricVS-item {
+    padding-left: 1em;
+  }
+  .bp-tablehistoricVS .group-data-historicVS {
+    display: grid;
+    grid-column: var(--coldata);
+    grid-row: var(--rowdata);
+    grid-template-columns: repeat(var(--col), 1fr);
+    grid-template-rows: repeat(var(--row), 1fr);
+    font-size: 11px;
+  }
+  .bp-tablehistoricVS .group-data-historicVS label {
+    padding-left: 1.5em;
+    margin: 0;
+  }
+  .bp-tablehistoricVS .group-data-historicVS .scse-form-group {
+    margin: 0.5px 0 0 0;
+    padding: 0;
+  }
+  .bp-tablehistoricVS .group-data-historicVS .scse-form-group select,
+  .bp-tablehistoricVS .group-data-historicVS .scse-form-group input {
+    padding: 0;
+    text-align: center;
+  }
+  .bp-tablehistoricVS .group-data-historicVS .scse-form-group select::-webkit-input-placeholder,
+  .bp-tablehistoricVS .group-data-historicVS .scse-form-group input::-webkit-input-placeholder {
+    text-align: center;
+    color: #dee2e6;
+  }
+  
+  .bp-gridhistoricVS-item {
+    display: flex;
+    width: 100%;
+    background-color: #dee2e6;
+    border-radius: 5px 0px 0px 5px;
+    margin: 0.1em;
+    align-items: center;
+  }
+  .bp-gridhistoricVS-item:hover {
+    cursor: pointer;
+    border: solid 1px  #93b74b;
+    
+  }
+  
+    
+  .historicVS-convention-container {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .historicVS-convention {
+    border-bottom: 1px solid #dee2e6;
+    height: 10px;
+    width: 5%;
+    display: inline-block;
+    margin-left: 5px;
+  }
+  
+  .complete {
+    border-color: #93b74b;
+  }
+  
+  .incomplete {
+    border-color: #ea8807;
+  }
+  
+  .noInfo {
+    border-color: #c1c1c1;
+  }
+  
+  .noApply {
+    border-color: #dee2e6;
+  }
+  
+  .text-convention {
+    font-size: 10px;
+  }
+  
+  .subtitlemodal {
+    padding-left: 15px;
+  }
+  
+  .CO {
+    border-bottom: 1px solid #93b74b !important;
+  
+
+  }
+  
+   .last{
+    border-bottom: 1px solid #93b74b !important;
+    border-right: 1px solid #93b74b!important;
+
+  }
+
+  .IN {
+    border-bottom: 1px solid #ea8807 !important;
+  }
+  
+  .SI {
+    border-bottom: 1px solid #c1c1c1 !important;
+  }
+  
+  .NA {
+    border-bottom: 1px solid #dee2e6 !important;
+  }
+    
+  .selected {
+    border: solid 1px  #93b74b;
+  }
+
+  .containerVarCharts {
+    display: flex;
+    width: 100%;
+    background-color: #dee2e6;
+    border-radius: 5px 0px 0px 5px;
+    margin: 0.1em;
+    height: 22px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+  }
+  .containerVarCharts input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkchart {
+     width: 100%;
+     padding-left: 15px;
+   }
+  .containerVarCharts:hover input ~ .checkchart {
+    background-color: #ccc;
+    border-radius: 5px 0px 0px 5px;
+  }
+  /* When the checkbox is checked, add a blue background */
+  .containerVarCharts input:checked ~ .checkchart {
+   
+    border: solid 1px  #93b74b;
+    border-radius: 5px 0px 0px 5px;
+  }
+  .checkchart:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  .containerVarCharts input:checked ~ .checkchart:after {
+    display: block;
+    color: #93b74b;
+  }
+
+  .containerVarCharts .checkchart:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(5deg);
+  }
+
+  .localchart{
+      border: solid 1px #000000;
+      border-radius: 15px;
+      padding: 20px;
+  }

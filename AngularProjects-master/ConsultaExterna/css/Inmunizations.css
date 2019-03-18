@@ -1,0 +1,83 @@
+
+  .bp-gridInmune-item {
+    display: flex;
+    width: 98%;
+    background-color: #dee2e6;
+    border-radius: 3px;
+    margin: 0.1em;
+    align-items: center;
+  }
+  .bp-gridInmune-item:hover {
+    cursor: pointer;
+    background-color: #93b74b;
+    color: #dee2e6;
+  }
+  
+  .bp-tableInmune {
+    display: grid;
+    grid-template-columns: 2.5em repeat(4, 1fr);
+    grid-template-rows: repeat(8, 2.5em);
+  }
+  .bp-tableInmune .header {
+    display: grid;
+    grid-column: 2/6;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+  }
+  .bp-tableInmune .header .bp-gridInmune-item {
+    justify-content: center;
+  }
+  .bp-tableInmune .group-var {
+    display: grid;
+    grid-column: 1/3;
+    grid-row: 2/9;
+    grid-template-columns: 2.5em 1fr;
+    grid-template-rows: repeat(7, 2.5em);
+  }
+  .bp-tableInmune .group-var .bp-gridInmune-item {
+    padding-left: 1em;
+  }
+  .bp-tableInmune .group-var .grouper {
+    display: flex;
+    padding-left: 0;
+    font-size: 12px;
+    writing-mode: vertical-rl;
+    line-height: 12px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .bp-tableInmune .group-var .grouper.hbg {
+    grid-row: 1/3;
+  }
+  .bp-tableInmune .group-var .grouper.oe {
+    grid-row: 3/6;
+  }
+  .bp-tableInmune .group-data {
+    display: grid;
+    grid-column: 3/6;
+    grid-row: 2/9;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+    font-size: 11px;
+  }
+  .bp-tableInmune .group-data label {
+    padding-left: 1.5em;
+    margin: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  }
+  .bp-tableInmune .group-data .scse-form-group {
+    margin: 0.5px 0 0 0;
+    padding: 0;
+  }
+  .bp-tableInmune .group-data .scse-form-group select,
+  .bp-tableInmune .group-data .scse-form-group input {
+    padding: 0;
+    text-align: center;
+  }
+  .bp-tableInmune .group-data .scse-form-group select::-webkit-input-placeholder,
+  .bp-tableInmune .group-data .scse-form-group input::-webkit-input-placeholder {
+    text-align: center;
+    color: #dee2e6;
+  }
+  

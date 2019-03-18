@@ -1,0 +1,2192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./lib/bootstrap4/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/site.css" />
+    <link href="./lib/tagify/dist/tagify.css" rel="stylesheet" />
+    <link href="./css/HeaderPatient.css" rel="stylesheet" />
+    <link href="./css/Header2.css" rel="stylesheet" />
+    <link href="./css/GeneralInformation.css" rel="stylesheet" />
+    <link href="./css/ExpandableTextArea.css" rel="stylesheet" />
+    <link href="./css/Recommendations.css" rel="stylesheet" />
+    <link href="./css/Diagnostics.css" rel="stylesheet" />
+    <link href="./css/AnalysisAndManagementPlan.css" rel="stylesheet" />
+    <link href="./css/chosen.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./css/RevisionsAndFindings.css" rel="stylesheet" />
+    <link href="./css/scales.css" rel="stylesheet" />
+    <link href="./css/VitalSigns.css" rel="stylesheet" />
+    <link href="./css/Background.css" rel="stylesheet" />
+    <link href="./css/ExternalCause.css" rel="stylesheet" />
+    <link href="./css/wave.css" rel="stylesheet" />
+    <link href="./css/homeControllerPatientAtentionView.css" rel="stylesheet" />
+    <link href="./css/jquery.loadingModal.css" rel="stylesheet" />
+    <link href="./css/BooleanScaleVariable.css" rel="stylesheet" />
+    <link href="./css/switch.css" rel="stylesheet" />
+    <link href="./css/Background.css" rel="stylesheet" />
+    <link href="./scss/hospitalarios/hospitalarios.css" rel="stylesheet">
+    <link href="./scss/inmunologicos/inmunologicos.css" rel="stylesheet">
+    <link href="./css/HistoricoSignosVitales.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+    <link rel="stylesheet" href="bower_components/chartist/dist/Legends.css">
+    <title>Document</title>
+
+    <style>
+        .chart {
+	height: 400px;
+}
+
+.ct-point {
+	stroke-width: 15px;
+	cursor: pointer;
+    }
+ 
+    </style>
+</head>
+
+<body>
+    <!-- componente de antecedentes-->
+
+
+    <div id="backgroundComponent" class="bg-container">
+        <div class="row">
+            <div class="col-md-2">
+                <div id="scales-treeview" class="scse-treeview">
+                    <div class="scse-treeview-content">
+                        <ul class="nav nav-pills scse-scale-tree" id="tabList" role="tablist">
+                            <li class="header">
+                                <span class="f-left-treeview">
+                                    Escalas de valoración
+                                </span>
+                            </li>
+                            <li class="scse-inactive">
+                                <a href="" role="tab" data-toggle="tab">
+                                    <span class="f-left-treeview text-truncate">Grupo sanguineo</span>
+                                    <span class="f-right">
+                                        <i class="fa fa-plus fa-lg scse-plus"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="scse-inactive">
+                                <a href="" role="tab" data-toggle="tab">
+                                    <span class="f-left-treeview text-truncate">Alergicos</span>
+                                    <span class="f-right">
+                                        <i class="fa fa-plus fa-lg scse-plus"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="scse-inactive">
+                                <a href="" role="tab" data-toggle="tab">
+                                    <span class="f-left-treeview text-truncate">Hospitalarios</span>
+                                    <span class="f-right">
+                                        <i class="fa fa-plus fa-lg scse-plus"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10 p-4">
+                    <div class="bg-data-container">
+                        <div class="row">
+                              
+                        <div class="col-6">
+
+                            
+                            
+                         <div class="bp-tablehistoricVS h-25" style="--col: 5; --row:7;--coltitle:1/5; --rowdata:2/7;--coldata:2/5;">
+                            <div class="title-historicVS">      
+                                 <div class="bp-gridhistoricVS-item" data-code="rn">Signos Vitales Básicos</div>
+                               </div>
+                                                        <div class="group-var-historicVS">
+                                                                <label class="containerVarCharts">
+                                                                        <input type="checkbox" checked="checked">
+                                                                        <span class="checkchart"><i class="fas fa-line-chart" style="color:#93b74b; padding-right:10px;" ></i>Frecuencia</span>
+                                                                </label>
+                                                                <label class="containerVarCharts">
+                                                                        <input type="checkbox" checked="checked">
+                                                                        <span class="checkchart"><i class="fas fa-line-chart" style="color:#93b74b; padding-right:10px;" ></i>Frecuencia</span>
+                                                                </label>
+                                                                <label class="containerVarCharts">
+                                                                        <input type="checkbox" checked="checked">
+                                                                        <span class="checkchart"><i class="fas fa-line-chart" style="color:#93b74b; padding-right:10px;" ></i>Frecuencia</span>
+                                                                </label>      <label class="containerVarCharts">
+                                                                        <input type="checkbox" checked="checked">
+                                                                        <span class="checkchart"><i class="fas fa-line-chart" style="color:#93b74b; padding-right:10px;" ></i>Frecuencia</span>
+                                                                </label>      <label class="containerVarCharts">
+                                                                        <input type="checkbox" checked="checked">
+                                                                        <span class="checkchart"><i class="fas fa-line-chart" style="color:#93b74b; padding-right:10px;" ></i>Frecuencia</span>
+                                                                </label>      <label class="containerVarCharts">
+                                                                        <input type="checkbox" checked="checked">
+                                                                        <span class="checkchart"><i class="fas fa-line-chart" style="color:#93b74b; padding-right:10px;" ></i>Frecuencia</span>
+                                                                </label>
+                                                           
+                                                            <label class="containerVarCharts">
+                                                                    <input type="checkbox" checked="checked">
+                                                                    <span class="checkchart"><i class="fas fa-line-chart" style="color:#93b74b; padding-right:10px;" ></i>Frecuencia</span>
+                                                            </label>
+                                                            <label class="containerVarCharts">
+                                                                    <input type="checkbox" checked="checked">
+                                                                    <span class="checkchart"><i class="fas fa-line-chart" style="color:#93b74b; padding-right:10px;" ></i>Frecuencia</span>
+                                                            </label>
+                                                            <label class="containerVarCharts">
+                                                                    <input type="checkbox" checked="checked">
+                                                                    <span class="checkchart"><i class="fas fa-line-chart" style="color:#93b74b; padding-right:10px;" ></i>Frecuencia</span>
+                                                            </label>       
+                                                     
+                                                        </div>
+                                                        <div class="group-data-historicVS">
+
+                                                                <div data-codeVacuna="AT" class="CO last"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO "> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                <div data-codeVacuna="AT" class="IN last"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="IN"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="SI"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="SI"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                <div data-codeVacuna="AT" class="CO last"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+
+                                                                <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                                    <div data-codeVacuna="AT" class="CO"> 
+                                                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                                    </div>
+                                                        <div data-codeVacuna="AT" class="CO"> 
+                                                            <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                        </div>
+                                                        <div data-codeVacuna="AT" class="CO"> 
+                                                            <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                        </div>
+                                                        <div data-codeVacuna="AT" class="CO"> 
+                                                            <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                        </div>
+                                                        <div data-codeVacuna="AT" class="CO"> 
+                                                            <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                        </div>
+                                                        <div data-codeVacuna="AT" class="CO"> 
+                                                            <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                        </div>
+
+                                                        <div data-codeVacuna="AT" class="CO"> 
+                                                                <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                            </div>
+                                                            <div data-codeVacuna="AT" class="CO"> 
+                                                                <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                            </div>
+                                                            <div data-codeVacuna="AT" class="CO"> 
+                                                                <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                            </div>
+                                                            <div data-codeVacuna="AT" class="CO"> 
+                                                                <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                            </div>
+                                                            <div data-codeVacuna="AT" class="CO"> 
+                                                                <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                                            </div>
+
+                                                        </div>
+
+                                                       
+                                 
+                          </div>
+                            </div>
+                        <div class="col-6">
+                                <div class="row">
+                                        <div class="col-11 localchart">
+                                         Titulo 1
+                                          <div id="chart1" class="ct-chart"></div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                           
+                          </div>
+                    
+                <div class="bg-data-container">
+                    <!-- componente de grupo sanguineo -->
+                   
+
+                    <div id="bgbloodtype" data-background="" class="bg-data-container">
+                        <label class="bg-title">Grupo Sanguineo</label>
+                        <div class="row mx-1">
+                            <div class="col-md-7 mt-2 mb-3">
+                                <div id="bt_GRUSA" data-control="" data-code="GRUSA" data-type="CG" class="d-flex">
+                                    <div class="form-check form-check-inline flex-fill">
+                                        <input class="form-check-input" type="radio" name="GRUSA" id="GRSO" value="" data-description="">
+                                        <label class="form-check-label" for="GRSO">O</label>
+                                    </div>
+                                    <div class="form-check form-check-inline flex-fill">
+                                        <input class="form-check-input" type="radio" name="GRUSA" id="GRSA" value="" data-description="" checked="">
+                                        <label class="form-check-label" for="GRSA">A</label>
+                                    </div>
+                                    <div class="form-check form-check-inline flex-fill">
+                                        <input class="form-check-input" type="radio" name="GRUSA" id="GRSB" value="" data-description="" checked="">
+                                        <label class="form-check-label" for="GRSB">B</label>
+                                    </div>
+                                    <div class="form-check form-check-inline flex-fill">
+                                        <input class="form-check-input" type="radio" name="GRUSA" id="GRSAB" value="" data-description="" checked="">
+                                        <label class="form-check-label" for="GRSAB">AB</label>
+                                    </div>
+                                    <div class="form-check form-check-inline flex-fill">
+                                        <input class="form-check-input" type="radio" name="GRUSA" id="GRSSI" value="" data-description="" checked="">
+                                        <label class="form-check-label" for="GRSSI">Sin informacion</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-2 mb-3">
+                                <div id="bt_RH" data-code="RH" data-control="" data-type="CG" class="d-flex">
+                                    <strong class="bg-field-title">RH: </strong>
+                                    <div class="form-check form-check-inline flex-fill">
+                                        <input class="form-check-input" type="radio" name="RH" id="POSITIVO" value="" data-description="" checked="">
+                                        <label class="form-check-label" for="POSITIVO">Positivo</label>
+                                    </div>
+                                    <div class="form-check form-check-inline flex-fill">
+                                        <input class="form-check-input" type="radio" name="RH" id="NEGATIVO" value="" data-description="" checked="">
+                                        <label class="form-check-label" for="NEGATIVO">Negativo</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                            </div>
+                        </div>
+                    </div>
+                    <!--aca termina grupo sanguineo  -->
+                </div>
+                <!-- hospitalarios  -->
+                <div id="bghospitable" data-background="" class="bg-data-container">
+                    <label class="bg-title">Hospitalarios:</label>
+                    <div class="row mx-1">
+                        <div class="col-md-12 mb-2">
+                            <div id="h_tagify" data-control="" data-code="" data-type="TF">
+                                <input class="bg-tagify" type="text" name="tagify" value="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--fin hospitalarios  -->
+                <!-- patologicos  -->
+                <div id="bgpathological" data-background="" class="bg-data-container">
+                    <label class="bg-title">Patologicos</label>
+                    <button class="plus-bottom float-right m-2" type="button">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <div class="row m-1">
+                        <div class="col-md-5">
+                            <div id="pa_back" data-code="bagcground" data-control="" data-type="CG" class="d-flex">
+                                <label class="bg-title ligth">Antecendentes</label>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="pa_back" id="pac_si" value="" data-description="" checked="">
+                                    <label class="form-check-label" for="pac_si">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="pa_back" id="pac_no" value="" data-description="" checked="">
+                                    <label class="form-check-label" for="pac_no">No</label>
+                                </div>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="pa_back" id="pac_noref" value="" data-description="" checked="">
+                                    <label class="form-check-label" for="pac_noref">No refiere</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-1 hidden animated fadeIn fast" data-expand="">
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="col-md-8 pl-4">
+                                        <div id="pa_tagify" data-control="" data-code="pac_tagify" data-type="TF">
+                                            <input class="bg-tagify" type="text" name="pac_tagify" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div id="pa_code" class="scse-form-group pt-2" data-control="" data-code="pac_code" data-type="TB">
+                                            <input class="scse-form-control" type="text" pattern="[0-9]+" min="0" max="100" required>
+                                            <label class="animated-label">Código</label>
+                                            <span class="scse-alert expand" data-alert="" data-message="please enter number only"><i class="fas fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div id="pa_org" class="scse-form-group pt-2" data-control="" data-code="pac_org" data-type="TB">
+                                            <input class="scse-form-control" type="text" required>
+                                            <label class="animated-label">Origen</label>
+                                            <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div id="pa_datebg" class="scse-form-group pt-2" data-control="" data-code="pac_datebg" data-type="TB">
+                                            <input class="scse-form-control" type="date" max="2019-02-25" required>
+                                            <label class="animated-label">Fecha de diagnóstico</label>
+                                            <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div id="pa_age" class="scse-form-group pt-2" data-control="" data-code="pac_age" data-type="TB">
+                                            <input class="scse-form-control" type="number" min="0" max="200" required>
+                                            <label class="animated-label">Edad</label>
+                                            <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div id="pa_Observations" data-control="" data-code="pac_Observations" data-type="TA" class="ExpandableTextArea" data-expandedclass="col-12" data-defaultclass="col-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label">Observaciones</label>
+                                        <div class="containerTextarea" style="min-height: 50px;">
+                                            <textarea rows="1" class="form-control" data-required="true"></textarea>
+                                            <img class="ExpandableContainerToggle" src="./images/FlechaB.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="striped-border">
+                        </div>
+                        <div class="row m-1 hidden  animated fadeIn fast" data-clone="">
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="col-md-8 pl-4">
+                                        <div data-control-clone="" data-code="tagify" data-type="TF">
+                                            <input class="bg-tagify" type="text" data-idcontrol="tagify" name="tagify" value="" />
+                                            <label class="animated-label" for="pac_code">Diagnostico</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="scse-form-group pt-2" data-control-clone="" data-code="code" data-type="TB">
+                                            <input class="scse-form-control" type="text" data-idcontrol="code" required>
+                                            <label class="animated-label">Código</label>
+                                            <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="scse-form-group pt-2" data-control-clone="" data-code="org" data-type="TB">
+                                            <input class="scse-form-control" type="text" data-idcontrol="org" required>
+                                            <label class="animated-label">Origen</label>
+                                            <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="scse-form-group pt-2" data-control-clone="" data-code="datebg" data-type="TB">
+                                            <input class="scse-form-control" type="date" data-idcontrol="datebg" required>
+                                            <label class="animated-label">Fecha de origen</label>
+                                            <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="scse-form-group pt-2" data-control-clone="" data-code="age" data-type="TB">
+                                            <input class="scse-form-control" type="number" data-idcontrol="age" required>
+                                            <label class="animated-label">Edad</label>
+                                            <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div data-control-clone="" data-code="Observations" data-type="TA" class="ExpandableTextArea position-relative" data-expandedclass="col-12" data-defaultclass="col-6">
+                                    <div class="form-group">
+                                        <label class="col-form-label">Observaciones</label>
+                                        <div class="containerTextarea" style="min-height: 50px;">
+                                            <textarea rows="1" class="form-control" data-idcontrol="Observations" name="pac_Observations" data-required="true"></textarea>
+                                            <img class="ExpandableContainerToggle" src="./images/FlechaB.png">
+                                        </div>
+                                        <button class="plus-bottom stiky float-right" type="button">
+                                            <i class="fa fa-close" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="striped-border">
+                        </div>
+                    </div>
+                </div>
+                <!-- fin patologicos -->
+                <!-- inicio quirurgicos -->
+                <div id="bgsurgical" data-background="" class="bg-data-container">
+                    <label class="bg-title">Quirurgicos</label>
+                    <button class="plus-bottom float-right m-2" type="button">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+                    <div class="row m-1">
+                        <div class="col-md-5">
+                            <div id="su_back" data-code="bagcground" data-control="" data-type="CG" class="d-flex">
+                                <label class="bg-title ligth">Antecendentes</label>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="su_back" id="suc_si" value="" data-description="" checked="">
+                                    <label class="form-check-label" for="suc_si">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="su_back" id="suc_no" value="" data-description="" checked="">
+                                    <label class="form-check-label" for="suc_no">No</label>
+                                </div>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="su_back" id="suc_noref" value="" data-description="" checked="">
+                                    <label class="form-check-label" for="suc_noref">No refiere</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 hidden animated fadeIn fast" data-expand="">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div id="su_proc" class="scse-form-group pt-2" data-control="" data-code="suc_proc" data-type="SE">
+                                        <select class="scse-form-control scse-select select" id="suc_proc">                                    
+                                            <option value="value1"></option>
+                                        </select>
+                                        <label class="animated-label" for="@var.Code">Procedimiento</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-4">
+                                    <div id="su_tagify" data-control="" data-code="suc_tagify" data-type="TF">
+                                        <input class="bg-tagify" type="text" name="suc_tagify" value="" />
+                                        <label class="animated-label" for="pac_code">Diagnostico</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div id="su_prop" class="scse-form-group pt-2" data-control="" data-code="suc_prop" data-type="SE">
+                                        <select class="scse-form-control scse-select select" id="suc_prop">                                    
+                                                <option value="value1"></option>
+                                            </select>
+                                        <label class="animated-label" for="@var.Code">Propósito</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div id="su_fecha" class="scse-form-group pt-2" data-control="" data-code="suc_fecha" data-type="TB">
+                                        <input class="scse-form-control" type="date" id="suc_fecha" required>
+                                        <label class="animated-label" for="suc_fecha">Fecha</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-4">
+                                    <div id="su_ips" data-control="" data-code="suc_ips" data-type="TF">
+                                        <input class="bg-tagify" type="text" name="suc_ips" value="" />
+                                        <label class="animated-label" for="pac_code">Ips</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div id="su_motivo" data-control="" data-code="suc_motivo" data-type="TA" class="ExpandableTextArea" data-expandedclass="col-12" data-defaultclass="col-6">
+                                        <div class="form-group row p-3">
+                                            <label class="col-2 p-0 col-form-label">Motivo</label>
+                                            <div class="col-10 p-0 containerTextarea" style="min-height: 50px;">
+                                                <textarea rows="1" class="form-control" id="suc_motivo" name="suc_motivo" data-required="true"></textarea>
+                                                <img class="ExpandableContainerToggle " src="./images/FlechaB.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div id="su_ubic" class="scse-form-group pt-2" data-control="" data-code="suc_ubic" data-type="SE">
+                                        <select class="scse-form-control scse-select select" id="suc_ubic">                                    
+                                                    <option value="value1"></option>
+                                                </select>
+                                        <label class="animated-label" for="@var.Code">Ubicación</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div id="su_reco" class="scse-form-group" data-control="" data-code="suc_reco" data-type="SW">
+                                        <span class="switch switch-sm">
+                                            <label for="suc_reco">Reconstructiva</label>
+                                            <input id="suc_reco" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="divDoTreatmentForAlcohol" />
+                                            <label for="suc_reco"></label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 hidden animated fadeIn fast" data-clone="">
+                            <hr class="striped-border w-100">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="scse-form-group pt-2" data-control-clone="" data-code="proc" data-type="SE">
+                                        <select class="scse-form-control scse-select select" data-idcontrol="proc">                                    
+                                            <option value="value1"></option>
+                                        </select>
+                                        <label class="animated-label" for="">Procedimiento</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-4">
+                                    <div data-control-clone="" data-code="tagify" data-type="TF">
+                                        <input class="bg-tagify" type="text" data-idcontrol="tagify" name="tagify" value="" />
+                                        <label class="animated-label" for="">Diagnostico</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="scse-form-group pt-2" data-control-clone="" data-code="prop" data-type="SE">
+                                        <select class="scse-form-control scse-select select" data-idcontrol="prop">                                    
+                                                <option value="value1"></option>
+                                            </select>
+                                        <label class="animated-label" for="">Proposito</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="scse-form-group pt-2" data-control-clone="" data-code="fecha" data-type="TB">
+                                        <input class="scse-form-control" type="date" data-idcontrol="fecha" required>
+                                        <label class="animated-label" for="">Fecha</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-4">
+                                    <div data-control-clone="" data-code="ips" data-type="TF">
+                                        <input class="bg-tagify" type="text" data-idcontrol="ips" name="ips" value="" />
+                                        <label class="animated-label" for="">Ips</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div data-control-clone="" data-code="motivo" data-type="TA" class="ExpandableTextArea" data-expandedclass="col-12" data-defaultclass="col-6">
+                                        <div class="form-group row p-3">
+                                            <label class="col-2 p-0 col-form-label">Motivo</label>
+                                            <div class="col-10 p-0 containerTextarea" style="min-height: 50px;">
+                                                <textarea rows="1" class="form-control" data-idcontrol="motivo" name="motivo" data-required="true"></textarea>
+                                                <img class="ExpandableContainerToggle " src="./images/FlechaB.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="scse-form-group pt-2" data-control-clone="" data-code="ubic" data-type="SE">
+                                        <select class="scse-form-control scse-select select" data-idcontrol="ubic">                                    
+                                                    <option value="value1"></option>
+                                                </select>
+                                        <label class="animated-label" for="">Ubicación</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div data-control-clone="" class="scse-form-group" data-code="reco" data-type="SW">
+                                        <span class="switch switch-sm">
+                                                <label for="suc_reco">Reconstructiva</label>
+                                            <input data-idcontrol="reco" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="divDoTreatmentForAlcohol" />
+                                            <label for="reco"></label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- fin quirurgicos -->
+                <!-- inicio embarazo actual -->
+                <div id="bgmatern" data-background="" class="bg-data-container">
+                    <label class="bg-title">Embarazo actual y examenes realizados</label>
+                    <div class="row mx-1">
+                        <div class="col-md-3">
+                            <div id="pre_plan" class="scse-form-group pt-3" data-control="" data-code="plan" data-type="SW">
+                                <span class="switch switch-sm row">
+                                    <label class="col-9">Embarazo planeado</label>
+                                    <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_plan" />
+                                    <label ></label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_des" class="scse-form-group pt-3" data-control="" data-code="des" data-type="SW">
+                                <span class="switch switch-sm row">
+                                        <label class="col-9">Embarazo Deseado</label>
+                                        <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_des" />
+                                        <label></label>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_ace" class="scse-form-group pt-3" data-control="" data-code="ace" data-type="SW">
+                                <span class="switch switch-sm row">
+                                    <label class="col-9">Embarazo Aceptado</label>
+                                    <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_ace" />
+                                    <label for="prec_ace"></label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_fma" class="scse-form-group pt-2" data-control="" data-code="fma" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                    <option value="value1"></option>
+                                </select>
+                                <label class="animated-label">Fracasó metodo anticonceptivo</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_cpc" class="scse-form-group pt-0" data-control="" data-code="cpc" data-type="SW">
+                                <span class="switch switch-sm row">
+                                    <label class="col-9" class="w-50">Consulta preconcepcional</label>
+                                    <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_cpc" />
+                                    <label ></label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="prr_pa" class="scse-form-group pt-2" data-control="" data-code="pa" data-type="TB">
+                                <input class="scse-form-control" type="text" required>
+                                <label class="animated-label">Peso anterior</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_mfd" class="scse-form-group pt-2" data-control="" data-code="mfd" data-type="TB">
+                                <input class="scse-form-control" type="date">
+                                <label class="animated-label">Movimientos fetales desde</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_hde" class="scse-form-group pt-2" data-control="" data-code="hde" data-type="SW">
+                                <span class="switch switch-sm row">
+                                    <label class="col-9" class="w-50">Hospitalizada durante embarazo</label>
+                                    <input class="col-2" type="checkbox" class="switch" data-activate="pre_dig" />
+                                    <label ></label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 pl-4 hidden">
+                            <div id="pre_dig" data-control="" data-code="prac_dig" data-type="TF">
+                                <input class="bg-tagify" type="text" name="prac_dig" value="" />
+                                <label class="animated-label" for="prac_dig">Diagnostico</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_exm" class="scse-form-group pt-2" data-control="" data-code="exm" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                    <option value="v1"></option>
+                                    <option value="vn">normal</option>
+                                    <option value="va">anormal</option>
+                                    <option value="vnsh">no se hizo</option>
+                                </select>
+                                <label class="animated-label">Examen odontológico</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_exmm" class="scse-form-group pt-2" data-control="" data-code="exmm" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                    <option value="v1"></option>
+                                    <option value="vn">normal</option>
+                                    <option value="va">anormal</option>
+                                    <option value="vnsh">no se hizo</option>
+                                </select>
+                                <label class="animated-label">Examen mamas</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_atr" class="scse-form-group pt-2" data-control="" data-code="atr" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                    <option value="v1"></option>
+                                    <option value="vn">no</option>
+                                    <option value="vns">no se sabe</option>
+                                    <option value="vp">previa</option>
+                                    <option value="vem">embarazo</option>
+                                    <option value="vnsh">no se hizo</option>
+                                </select>
+                                <label class="animated-label">antirubeola</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_atp" class="scse-form-group pt-3" data-control="" data-code="atp" data-type="SW">
+                                <span class="switch switch-sm row">
+                                    <label class="col-9">Antitetanica previa</label>
+                                    <input class="col-2" type="checkbox" class="switch" data-activate="pre_atpmpd" />
+                                    <label></label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 hidden">
+                            <div id="pre_atpmpd" class="scse-form-group pt-2" data-control="" data-code="atpmpd" data-type="SE">
+                                <select class="scse-form-control scse-select select" data-activate="pre_atpmsd">                                    
+                                        <option value="v1"></option>
+                                        <option value="v2">1</option>
+                                        <option value="v3">2</option>
+                                        <option value="v4">3</option>
+                                        <option value="v5">4</option>
+                                        <option value="v6">5</option>
+                                        <option value="v6">6</option>
+                                        <option value="v6">7</option>
+                                        <option value="v6">8</option>
+                                        <option value="v6">9</option>
+                                    </select>
+                                <label class="animated-label">Mes primera dosis</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 hidden">
+                            <div id="pre_atpmsd" class="scse-form-group pt-2" data-control="" data-code="atpmsd" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                            <option value="v1"></option>
+                                            <option value="v2">1</option>
+                                            <option value="v3">2</option>
+                                            <option value="v4">3</option>
+                                            <option value="v5">4</option>
+                                            <option value="v6">5</option>
+                                            <option value="v6">6</option>
+                                            <option value="v6">7</option>
+                                            <option value="v6">8</option>
+                                            <option value="v6">9</option>
+                                        </select>
+                                <label class="animated-label">Mes segunda dosis</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_tof" class="scse-form-group pt-3" data-control="" data-code="tof" data-type="SW">
+                                <span class="switch switch-sm row">
+                                    <label class="col-9">Tos ferina</label>
+                                    <input class="col-2" type="checkbox" class="switch" data-activate="pre_rgmg" />
+                                    <label ></label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 hidden">
+                            <div id="pre_rgmg" class="scse-form-group pt-3" data-control="" data-code="rgmg" data-type="SW">
+                                <span class="switch switch-sm row">
+                                    <label class="col-9">Recibio gamaglobulina </label>
+                                    <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_tof" />
+                                    <label ></label>
+                                 </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_idrh" class="scse-form-group pt-3" data-control="" data-code="idrh" data-type="SW">
+                                <span class="switch switch-sm row">
+                                    <label class="col-9">Inmunización de rh</label>
+                                    <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_idrh" />
+                                    <label ></label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_coa" class="scse-form-group pt-2" data-control="" data-code="coa" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                        <option value="value1"></option>
+                                </select>
+                                <label class="animated-label">Coticoides antenatales</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_civ" class="scse-form-group pt-2" data-control="" data-code="civ" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                    <option value="v1"></option>
+                                    <option value="vn">normal</option>
+                                    <option value="va">anormal</option>
+                                    <option value="vnsh">no se hizo</option>
+                                </select>
+                                <label class="animated-label">Cervix: Inspección visual</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_tpv" class="scse-form-group pt-2" data-control="" data-code="tpv" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                    <option value="v1"></option>
+                                    <option value="vn">normal</option>
+                                    <option value="va">anormal</option>
+                                    <option value="vnsh">no se hizo</option>
+                                </select>
+                                <label class="animated-label">Tamizaje para VPH</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_pap" class="scse-form-group pt-2" data-control="" data-code="pap" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                    <option value="v1"></option>
+                                    <option value="vn">normal</option>
+                                    <option value="va">anormal</option>
+                                    <option value="vnsh">no se hizo</option>
+                                </select>
+                                <label class="animated-label">Papanicolaou</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_col" class="scse-form-group pt-2" data-control="" data-code="col" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                    <option value="v1"></option>
+                                    <option value="vn">normal</option>
+                                    <option value="va">anormal</option>
+                                    <option value="vnsh">no se hizo</option>
+                                </select>
+                                <label class="animated-label">Colposcopia</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_cha" class="scse-form-group pt-2" data-control="" data-code="cha" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                    <option value="v1"></option>
+                                    <option value="vp">Positivo</option>
+                                    <option value="vn">Negativo</option>
+                                    <option value="vnsh">no se hizo</option>
+                                </select>
+                                <label class="animated-label">Chagas</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_mal" class="scse-form-group pt-2" data-control="" data-code="mal" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                    <option value="value1"></option>
+                                </select>
+                                <label class="animated-label">Malaria</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_ppp" class="scse-form-group pt-2" data-control="" data-code="ppp" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                    <option value="value1"></option>
+                                </select>
+                                <label class="animated-label">Preparación para el parto</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_eop" class="scse-form-group pt-0" data-control="" data-code="eop" data-type="SW">
+                                <span class="switch switch-sm row">
+                                    <label class="col-9" class="w-50">Eclampsia o preeclampsia</label>
+                                    <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_eop" />
+                                    <label></label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_clm" class="scse-form-group pt-2" data-control="" data-code="clm" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                    <option value="value1"></option>
+                                </select>
+                                <label class="animated-label">Consejeria lactancia materna</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="bp-tablexam h-25">
+                                <div class="">
+                                </div>
+                                <div class="header">
+                                    <div class="bp-grid-item">EXÁMENES</div>
+                                    <div class="bp-grid-item">SEMANAS</div>
+                                    <div class="bp-grid-item">VALOR</div>
+                                    <div class="bp-grid-item">FECHA</div>
+                                </div>
+                                <div class="group-var">
+                                    <div class="bp-grid-item grouper hbg">HB y Glucemia</div>
+                                    <div class="bp-grid-item"> HB (g/dl)</div>
+                                    <div class="bp-grid-item">Glucemia (mg/dl)</div>
+                                    <div class="bp-grid-item grouper oe">Otros Examenes</div>
+                                    <div class="bp-grid-item">Urocultivo</div>
+                                    <div class="bp-grid-item">Flujo vaginal</div>
+                                    <div class="bp-grid-item">AgSHB</div>
+                                    <div class="bp-grid-item grouper si">Sifilis</div>
+                                    <div class="bp-grid-item">VDRL/RPR</div>
+                                    <div class="bp-grid-item grouper T">T</div>
+                                    <div class="bp-grid-item">Toxoplasmosis</div>
+                                </div>
+                                <div class="group-data">
+                                    <label>Menor a 20 semanas </label>
+                                    <div id="pre_lthbt" class="scse-form-group" data-control="" data-code="lthbt" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_lthbd" class="scse-form-group" data-control="" data-code="lthbd" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <label>Mayor o igual a 20 semanas </label>
+                                    <div id="pre_mthbt" class="scse-form-group" data-control="" data-code="mthbt" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_mthbd" class="scse-form-group" data-control="" data-code="mthbd" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <label>Menor a 20 semanas </label>
+                                    <div id="pre_ltglt" class="scse-form-group" data-control="" data-code="ltglt" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_ltgld" class="scse-form-group" data-control="" data-code="ltgld" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <label>Mayor o igual a 20 semanas </label>
+                                    <div id="pre_mtglt" class="scse-form-group" data-control="" data-code="mtglt" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_mtgld" class="scse-form-group" data-control="" data-code="mtgld" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <label>Menor a 20 semanas </label>
+                                    <div id="pre_lturot" class="scse-form-group" data-control="" data-code="lturot" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_lturod" class="scse-form-group" data-control="" data-code="lturod" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <label>Mayor o igual a 20 semanas </label>
+                                    <div id="pre_mturot" class="scse-form-group" data-control="" data-code="mturot" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_mturod" class="scse-form-group" data-control="" data-code="mturod" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <label>Menor a 20 semanas </label>
+                                    <div id="pre_ltflvt" class="scse-form-group" data-control="" data-code="ltflvt" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_ltflvd" class="scse-form-group" data-control="" data-code="ltflvd" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <label>Mayor o igual a 20 semanas </label>
+                                    <div id="pre_mtflvt" class="scse-form-group" data-control="" data-code="mtflvt" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_mtflvd" class="scse-form-group" data-control="" data-code="mtflvd" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <label>Menor a 20 semanas </label>
+                                    <div id="pre_ltagst" class="scse-form-group" data-control="" data-code="ltagst" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_ltagsd" class="scse-form-group" data-control="" data-code="ltagsd" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <label>Mayor o igual a 20 semanas </label>
+                                    <div id="pre_mtagst" class="scse-form-group" data-control="" data-code="mtagst" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_mtagsd" class="scse-form-group" data-control="" data-code="mtagsd" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <label>Menor a 20 semanas </label>
+                                    <div id="pre_ltvdrt" class="scse-form-group" data-control="" data-code="ltvdrt" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_ltvdrd" class="scse-form-group" data-control="" data-code="ltvdrd" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <label>Mayor o igual a 20 semanas </label>
+                                    <div id="pre_mtvdrt" class="scse-form-group" data-control="" data-code="mtvdrt" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_mtvdrd" class="scse-form-group" data-control="" data-code="mtvdrd" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <label>Menor a 20 semanas </label>
+                                    <div id="pre_lttoxt" class="scse-form-group" data-control="" data-code="lttoxt" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_lttoxd" class="scse-form-group" data-control="" data-code="lttoxd" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <label>Mayor o igual a 20 semanas </label>
+                                    <div id="pre_mttoxt" class="scse-form-group" data-control="" data-code="mttoxt" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" min="0" max="200" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                    <div id="pre_mttoxd" class="scse-form-group" data-control="" data-code="mttoxd" data-type="TB">
+                                        <input class="scse-form-control" placeholder="Valor" type="text" required>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="bg-title w-100">Sifilis</label><br>
+                        <div class="col-md-3">
+                            <div id="pre_cfta" class="scse-form-group" data-control="" data-code="cfta" data-type="SW">
+                                <span class="switch switch-sm row">
+                                    <label class="col-9">Consulta por FTA</label>
+                                    <input class="col-2"type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_cfta" />
+                                    <label></label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_fe" class="scse-form-group pt-2" data-control="" data-code="fe" data-type="SE">
+                                <select class="scse-form-control scse-select select">                                    
+                                        <option value="value1"></option>
+                                    </select>
+                                <label class="animated-label">Fecha</label>
+                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_tra" class="scse-form-group" data-control="" data-code="tra" data-type="SW">
+                                <span class="switch switch-sm row">
+                                    <label class="col-9">Tratamiento</label>
+                                    <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_tra" />
+                                    <label></label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div id="pre_trap" class="scse-form-group" data-control="" data-code="trap" data-type="SW">
+                                <span class="switch switch-sm row">
+                                    <label class="col-9">Tratamiento pareja</label>
+                                    <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_trap" />
+                                    <label></label>
+                                </span>
+                            </div>
+                        </div>
+                        <label class="bg-title w-100">VIH</label><br>
+                        <div class="col-md-6 right-dotted mb-3">
+                            <div class="row">
+                                <label class="col-6 pt-3" style="color: black">Menos a 20 semanas</label>
+                                <div class="col-6">
+                                    <div id="pre_ltsol" class="scse-form-group pt-3 m-0" data-control="" data-code="ltsol" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                            <label class="col-9">Solicitado</label>
+                                            <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_sol" />
+                                            <label ></label>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div id="pre_ltaspt" class="scse-form-group pt-3 m-0" data-control="" data-code="ltaspt" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                            <label class="col-9">Asesoria pre test</label>
+                                            <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_aspt" />
+                                            <label></label>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div id="pre_ltasptf" class="scse-form-group pt-2 m-0" data-control="" data-code="ltasptf" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                            <option value="value1"></option>
+                                        </select>
+                                        <label class="animated-label">Fecha</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div id="pre_ltrea" class="scse-form-group pt-3 m-0" data-control="" data-code="ltrea" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                            <label class="col-9">Realizado</label>
+                                            <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_rea" />
+                                            <label></label>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div id="pre_ltreaf" class="scse-form-group pt-2 m-0" data-control="" data-code="ltreaf" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                            <option value="value1"></option>
+                                        </select>
+                                        <label class="animated-label">Fecha</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div id="pre_ltresu" class="scse-form-group pt-2 m-0" data-control="" data-code="ltresu" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                            <option value="value1"></option>
+                                        </select>
+                                        <label class="animated-label">Resultado</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div id="pre_ltcons" class="scse-form-group pt-2 m-0" data-control="" data-code="ltcons" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                            <option value="value1"></option>
+                                        </select>
+                                        <label class="animated-label">Consejeria</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="row">
+                                <label class="col-6 pt-3" style="color: black">mayor o igual a 20 semanas</label>
+                                <div class="col-6">
+                                    <div id="pre_metsol" class="scse-form-group pt-3 m-0" data-control="" data-code="metsol" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                                <label class="col-9">Solicitado</label>
+                                                <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_sol" />
+                                                <label></label>
+                                            </span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div id="pre_metaspt" class="scse-form-group pt-3 m-0" data-control="" data-code="metaspt" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                                <label class="col-9">Asesoria pre test</label>
+                                                <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_aspt" />
+                                                <label></label>
+                                            </span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div id="pre_metasptf" class="scse-form-group pt-2 m-0" data-control="" data-code="metasptf" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                                <option value="value1"></option>
+                                            </select>
+                                        <label class="animated-label">Fecha</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div id="pre_metrea" class="scse-form-group pt-3 m-0" data-control="" data-code="metrea" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                                <label class="col-9">Realizado</label>
+                                                <input class="col-2"type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_rea" />
+                                                <label></label>
+                                            </span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div id="pre_metreaf" class="scse-form-group pt-2 m-0" data-control="" data-code="metreaf" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                                <option value="value1"></option>
+                                            </select>
+                                        <label class="animated-label">Fecha</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div id="pre_metresu" class="scse-form-group pt-2 m-0" data-control="" data-code="metresu" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                                <option value="value1"></option>
+                                            </select>
+                                        <label class="animated-label">Resultado</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div id="pre_metcons" class="scse-form-group pt-2 m-0" data-control="" data-code="metcons" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                                <option value="value1"></option>
+                                            </select>
+                                        <label class="animated-label">Consejeria</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="bg-title w-100">Habitos y factores de riesgo</label><br>
+                        <div class="col-md-4 right-dotted">
+                            <div class="row">
+                                <label class="col-12 m-0" style="color: black">1do Trimestre</label>
+                                <div class="col-12">
+                                    <div id="pre_perfrm" class="scse-form-group pt-2 m-0" data-control="" data-code="perfrm" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                            <option value="value1"></option>
+                                        </select>
+                                        <label class="animated-label">Fuma</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_percad" class="scse-form-group pt-2 m-0" data-control="" data-code="percad" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                                <option value="value1"></option>
+                                        </select>
+                                        <label class="animated-label">Cigarrillos al dia</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_percd" class="scse-form-group pt-3 m-0" data-control="" data-code="percd" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                            <label class="col-10">Consumo de drogas</label>
+                                            <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_rea" />
+                                            <label></label>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_perdro" class="scse-form-group pt-2 m-0" data-control="" data-code="perdro" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                            <option value="value1"></option>
+                                        </select>
+                                        <label class="animated-label">Drogas</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_percda" class="scse-form-group pt-3 m-0" data-control="" data-code="percda" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                            <label class="col-10">Consumo de alcohol</label>
+                                            <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_rea" />
+                                            <label></label>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_pervdv" class="scse-form-group pt-3 m-0" data-control="" data-code="pervdv" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                            <label class="col-10">Victima de violencia</label>
+                                            <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_rea" />
+                                            <label></label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 right-dotted">
+                            <div class="row">
+                                <label class="col-12 m-0" style="color: black">2do Trimestre</label>
+                                <div class="col-12">
+                                    <div id="pre_sdofrm" class="scse-form-group pt-2 m-0" data-control="" data-code="sdofrm" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                                <option value="value1"></option>
+                                            </select>
+                                        <label class="animated-label">Fuma</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_sdocad" class="scse-form-group pt-2 m-0" data-control="" data-code="sdocad" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                                    <option value="value1"></option>
+                                            </select>
+                                        <label class="animated-label">Cigarrillos al dia</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_sdocd" class="scse-form-group pt-3 m-0" data-control="" data-code="sdocd" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                                <label class="col-10">Consumo de drogas</label>
+                                                <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_rea" />
+                                                <label></label>
+                                            </span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_sdodro" class="scse-form-group pt-2 m-0" data-control="" data-code="sdodro" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                                <option value="value1"></option>
+                                            </select>
+                                        <label class="animated-label">Drogas</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_sdocda" class="scse-form-group pt-3 m-0" data-control="" data-code="sdocda" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                                <label class="col-10">Consumo de alcohol</label>
+                                                <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_rea" />
+                                                <label></label>
+                                            </span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_sdovdv" class="scse-form-group pt-3 m-0" data-control="" data-code="sdovdv" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                                <label class="col-10">Victima de violencia</label>
+                                                <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_rea" />
+                                                <label></label>
+                                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <label class="col-12 m-0" style="color: black">3er Trimestre</label>
+                                <div class="col-12">
+                                    <div id="pre_tcrfrm" class="scse-form-group pt-2 m-0" data-control="" data-code="tcrfrm" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                                <option value="value1"></option>
+                                            </select>
+                                        <label class="animated-label">Fuma</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_tcrcad" class="scse-form-group pt-2 m-0" data-control="" data-code="tcrcad" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                                    <option value="value1"></option>
+                                            </select>
+                                        <label class="animated-label">Cigarrillos al dia</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_tcrcd" class="scse-form-group pt-3 m-0" data-control="" data-code="tcrcd" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                                <label class="col-10">Consumo de drogas</label>
+                                                <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_rea" />
+                                                <label></label>
+                                            </span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_tcrdro" class="scse-form-group pt-2 m-0" data-control="" data-code="tcrdro" data-type="SE">
+                                        <select class="scse-form-control scse-select select">                                    
+                                                <option value="value1"></option>
+                                            </select>
+                                        <label class="animated-label">Drogas</label>
+                                        <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_tcrcda" class="scse-form-group pt-3 m-0" data-control="" data-code="tcrcda" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                                <label class="col-10">Consumo de alcohol</label>
+                                                <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_rea" />
+                                                <label></label>
+                                            </span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div id="pre_tcrvdv" class="scse-form-group pt-3 m-0" data-control="" data-code="tcrvdv" data-type="SW">
+                                        <span class="switch switch-sm row">
+                                                <label class="col-10">Victima de violencia</label>
+                                                <input class="col-2" type="checkbox" class="switch" data-input-action="hide-show" data-action-for="prec_rea" />
+                                                <label></label>
+                                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="bgimmunizations" data-background="" class="bg-data-container">
+                    <div class="row mx-1">
+                        <div class="col-md-7">
+                        <label class="bg-title">Inmunizaciones</label>
+                        </div>
+                        <div class="col-md-5 inmuno-convention-container">
+                         <span class="inmuno-convention complete">
+                         </span>   
+                         <span class="text-convention">
+                          <label>Completo</label>
+                          </span>
+                                   <span class="inmuno-convention incomplete">
+                                              
+                                      </span>   
+                                      <span class="text-convention">
+                                      <label>Incompleto</label>
+                                      </span>
+                                      <span class="inmuno-convention noInfo">
+                                              
+                                          </span>   
+                                          <span class="text-convention">
+                                          <label>Sin informacion</label>
+                                          </span>
+                                          <span class="inmuno-convention NoApply">
+                                              
+                                              </span>   
+                                              <span class="text-convention">
+                                              <label>No aplica</label>
+                                              </span>
+                            
+                        </div>
+                    </div>
+                        <div class="col-md-12">
+                            <div class="bp-tableinmuno h-25" style="--col: 7; --row:7; --rowdata:2/9;--coldata:2/9;">
+                                <div class="parent"><div class="one">Vacuna</div><div class="two">Edad</div></div>
+                       
+                                     <div class="header-inmune">
+                                        <div class="bp-gridInmune-item" data-code="rn">Recien nacido</div>
+                                        <div class="bp-gridInmune-item" data-code="12">1-2 Meses</div>
+                                        <div class="bp-gridInmune-item" data-code="34">3-4 Meses</div>
+                                        <div class="bp-gridInmune-item" data-code="56">5-6 Meses</div>
+                                        <div class="bp-gridInmune-item" data-code="712">7-12 Meses</div>
+                                        <div class="bp-gridInmune-item" data-code="1323">13-23 Meses</div>
+                                        <div class="bp-gridInmune-item" data-code="26">2-6 Meses</div>
+                                        <div class="bp-gridInmune-item" data-code="rn">Recien nacido</div>
+                                        <div class="bp-gridInmune-item" data-code="12">1-2 Meses</div>
+                                        <div class="bp-gridInmune-item" data-code="34">3-4 Meses</div>
+                                        <div class="bp-gridInmune-item" data-code="56">5-6 Meses</div>
+                                        <div class="bp-gridInmune-item" data-code="712">7-12 Meses</div>
+                                        <div class="bp-gridInmune-item" data-code="1323">13-23 Meses</div>
+                                        <div class="bp-gridInmune-item" data-code="26">2-6 Meses</div>
+                                     </div>
+                                    <div class="group-var-inmune">
+                                        <div class="bp-gridInmune-item" data-code="AT" data-dosis="[{'code':'D1','value':'Primera Dosis','selected':false},{'code':'D2','value':'2da Dosis','selected':false}]">BCG (Antituberculosa)</div>
+                                        <div class="bp-gridInmune-item" data-code="HB" data-dosis="[{'code':'DR','value':'Primera Dosis Refuerzo','selected':false},{'code':'DR2','value':'2da Dosis Refuerzo','selected':false}]">Hepatitis B</div>
+                                        <div class="bp-gridInmune-item" data-code="PO" data-dosis="[{'code':'D1','value':'Primera Dosis','selected':false},{'code':'D2','value':'2da Dosis','selected':false}]">Polio</div>
+                                        <div class="bp-gridInmune-item" data-code="RV" data-dosis="[{'code':'D1','value':'Primera Dosis','selected':false},{'code':'D2','value':'2da Dosis','selected':false}]">Rotavirus</div>
+                                        <div class="bp-gridInmune-item" data-code="NC" data-dosis="[{'code':'D1','value':'Primera Dosis','selected':false},{'code':'D2','value':'2da Dosis','selected':false}]">Neumococo</div>
+                                        <div class="bp-gridInmune-item" data-code="TT" data-dosis="[{'code':'D1','value':'Primera Dosis','selected':false},{'code':'D2','value':'2da Dosis','selected':false}]">Toxoide tetánico</div>
+                                        <div class="bp-gridInmune-item" data-code="PV" data-dosis="[{'code':'D1','value':'Primera Dosis','selected':false},{'code':'D2','value':'2da Dosis','selected':false}]">Prevalente</div>
+                                    </div>
+                                    <div class="group-data-inmune">
+                                       <label data-codeVacuna="AT" data-title="rn" data-Vacuna="BCG (Antituberculosa)" data-edad="12" data-estado="CO" data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="pri" data-vacunador="pedro paramo" data-IsEditable="false">1 dosis</label>
+                                       <label data-codeVacuna="AT" data-title="12" data-Vacuna="BCG (Antituberculosa)" data-edad="12" data-estado="CO" data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                       <label data-codeVacuna="AT" data-title="34" data-Vacuna="BCG (Antituberculosa)" data-edad="" data-estado="CO" data-Observaciones="" data-fecha="" data-dosis="ter" data-vacunador=""></label>
+                                    <div data-codeVacuna="AT" class="CO"> 
+                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad="12"  data-Observaciones="ninguna" data-fecha="2018-01-06" data-dosis="seg" data-vacunador="pedro paramo">1 dosis</label>
+                                        <label data-codeVacuna="AT" data-title="56" data-Vacuna="BCG (Antituberculosa)" data-edad=""  data-Observaciones="" data-fecha="" data-dosis="ter" data-vacunador="">dosis 2</label>
+                                
+                                    </div>
+                                    </div>
+                        </div>
+                    </div>
+
+                    <div class="row mx-1">
+                            <div class="col-10 ">
+                                <label class="label pr-0 pt-2" style="margin-top: 15px;padding-left: 0px;"><strong>Efectos Adversos y/o contraindicaciones</strong></label>
+                            </div>
+                           
+                            <button class="plus-bottom float-right m-2" type="button" id="addAdverseEffectButton">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                    </div>
+                    <div class="row mx-1">
+                                <div class="col-md-3">
+                                        <div id="inm_eas" class="scse-form-group pt-2" data-control="" data-code="adverseEffect" data-type="SE">
+                                            <select class="scse-form-control scse-select select">                                    
+                                                <option value="v1"></option>
+                                                <option value="vn">normal</option>
+                                                <option value="va">anormal</option>
+                                                <option value="vnsh">no se hizo</option>
+                                            </select>
+                                            <label class="animated-label">Efectos adversos</label>
+                                            <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                        </div>
+                                </div>
+                                <div class="col-md-3">
+                                        <div id="inm_vac" class="scse-form-group pt-2" data-control="" data-code="vaccine" data-type="SE">
+                                            <select class="scse-form-control scse-select select">                                    
+                                                <option value="v1"></option>
+                                                <option value="vn">normal</option>
+                                                <option value="va">anormal</option>
+                                                <option value="vnsh">no se hizo</option>
+                                            </select>
+                                            <label class="animated-label">Vacuna</label>
+                                            <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                        </div>
+                                </div>
+                                <div class="col-md-3">
+                                        <div id="inm_fde" class="scse-form-group pt-2" data-control="" data-code="fde" data-type="TB">
+                                            <input class="scse-form-control" type="date">
+                                            <label class="animated-label">Fecha (efecto)</label>
+                                            <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="ExpandableTextArea col-3 " data-expandedclass="col-12" data-defaultclass="col-3">
+                                            <label class="col-form-label">Observaciones</label>
+                                             <div class="containerTextarea">
+                                                 <textarea id="inm_oea" rows="1" class="form-control" data-required="true"></textarea>
+                                                 <img class="ExpandableContainerToggle" src="~/images/FlechaB.png">
+                                             </div>
+                                    </div>
+
+
+                           
+                    </div>
+
+                    <div id="adverseEffectContainer">
+       
+                            <div class="row mx-1" id="inm-adverseEffect-@item.Id" data-IsEditable="@item.IsEditable">
+                                <div class=" col-3">
+                                    <div id="inm-ea-@item.Id" class="scse-ce-form" data-type="L">
+                                        <input class="inputBLine col-12 fields" type="text" value="@item.AdverseEffect" readonly />
+                                    </div>
+                                </div>
+                                <div class=" col-3">
+                                    <div id="inm-vac-@item.Id" class="scse-ce-form" data-type="L">
+                                        <input class="inputBLine col-12 fields" type="text"  value="@item.Vaccine" readonly />
+                                    </div>
+                                </div>
+                                <div class=" col-3">
+                                    <div id="inm-fea-@item.Id" class="scse-ce-form" data-type="L">
+                                        <input class="inputBLine col-12 fields" type="text" placeholder="Tiempo" value="@item.dateOcurrency" readonly />
+                                    </div>
+                                </div>
+
+                                <div class=" col-3">
+                                        <div id="inm-eao-@item.Id" class="scse-ce-form" data-type="L">
+                                            <input class="inputBLine col-12 fields" type="text" placeholder="Tiempo" value="@item.Frecuency" readonly />
+                                        </div>
+                                </div>
+                            </div>
+                       
+                    </div>
+
+
+                
+               
+                <div id="myModal" class="modal-inmuno" data-open="" data-codeVacuna="">
+                        <!-- Modal content -->
+                        <div class="modal-inmuno-content">
+                                <div class="bg-data-container">
+                                        <label id="vaccine-title" class="bg-title">Hepatitis</label>
+                                        <div class="subtitlemodal"><label >Información general</label></div>
+                                            <div class="row mx-1">
+                                                <div class="col-md-12">
+                                                        <div id="inmuno-estate" class="scse-form-group pt-2" data-control="" data-code="inm-mod-estate" data-type="SE">
+                                                            <select class="scse-form-control scse-select select" required>                                    
+                                                                <option value="v1"></option>
+                                                                <option value="CO">Completo</option>
+                                                                <option value="IN">Incompleto</option>
+                                                                <option value="SI">Sin Información</option>
+                                                                <option value="NA">No aplica</option>
+                                                            </select>
+                                                            <label class="animated-label">Estado</label>
+                                                            <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                                        </div>
+                                                </div>
+
+
+                                                <div class="ExpandableTextArea col-12 " data-expandedclass="col-12" data-defaultclass="col-12">
+                                                           <label class="col-form-label">Observaciones</label>
+                                                            <div class="containerTextarea">
+                                                                <textarea id="inmuno-Observations" rows="1" class="form-control" asp-for="Observations" data-required="true"></textarea>
+                                                                <img class="ExpandableContainerToggle" src="~/images/FlechaB.png">
+                                                            </div>
+                                                </div>
+
+
+
+                                            </div>
+                                            <div class="subtitlemodal"><label>Información aplicación</label></div>
+                                                <div class="row mx-1">
+                                                    <div class="col-md-6">
+                                                            <div id="inmuno-date" class="scse-form-group pt-2" data-control="" data-code="inm-mod-date" data-type="TB">
+                                                                <input class="scse-form-control" type="date">
+                                                                <label class="animated-label">fecha</label>
+                                                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                            <div id="inmuno-dose" class="scse-form-group pt-2" data-control="" data-code="inm-mod-dose" data-type="SE">
+                                                                                <select class="scse-form-control scse-select select">                                    
+                                                                                <option value="v1"></option>
+                                                                                <option value="pri">1ra Dosis </option>
+                                                                                <option value="seg">2da Dosis</option>
+                                                                                <option value="ter">3ra Dosis</option>
+                                                                                <option value="NA">No aplica</option>
+                                                                                </select>
+
+                                                                            <label class="animated-label">Dosis</label>
+                                                                            <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                            <div id="inmuno-vacunator" class="scse-form-group pt-2" data-control="" data-code="inm-mod-vac" data-type="TB" >
+                                                                <input class="scse-form-control" type="text" required>
+                                                                <label class="animated-label">Vacunador</label>
+                                                                <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mx-1">
+                                                        <button class="plus-bottom float-right m-2" type="button" id="save-inmuno">
+                                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                                        </button>
+                                                        <button class="plus-bottom float-right m-2" type="button" id="close-inmuno" >
+                                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                                        </button>
+                                                       
+                                                </div>
+                                        </div>
+                                    </div>
+                        </div>
+                </div>
+            
+                </div>
+            </div>
+        </div>
+                       
+                <!-- fin inunizaciones -->
+<!--INICIO NEONATALES-->
+<div class="bg-data-container" data-background="" style="padding:15px;" id="bgneonatal" data-save-interval-minutes="@ViewData["saveIntervalMinutes"]" data-episode="@ViewData["episode"]" data-first-save="@ViewData["firstSave"].ToString().ToLower()" data-api-base-url="@ViewData["apiBaseUrl"]" data-collection-name="@ViewData["collectionName"]">
+    <label class="bg-title">Neonatales</label>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group row" id="neonatalBackground-PatientBirthCondition">
+                <label class="col-6 col-form-label pr-0 pt-2" style="margin-top:10px">Condicion del paciente al nacer</label>
+                <div class="col-6 pt-2 pl-0">
+                    <label class="containeradio">
+                        <input type="radio" checked="checked" asp-for="PatientBirthCondition" id="patientBirthCondition-healthy" value="Healthy">
+                        <span class="checkmark"></span>
+                        <label>Sano</label>
+                    </label>
+                    <label class="containeradio">
+                        <input type="radio" asp-for="PatientBirthCondition" id="patientBirthCondition-Sick" value="Sick">
+                        <span class="checkmark"></span>
+                        <label>Enfermo </label>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="row no-gutters scse-form-group" id="neonatalBackground-HasBreathDificulties" data-dependency="Sick">
+                <div class="col-sm-9">
+                    <label>Dificultades respiratorias</label>
+                </div>
+                <div class="col-sm-3">
+                    <span class="switch switch-sm">
+                        <input id="HasBreathDificulties" type="checkbox" class="switch" checked="@Model.HasBreathDificulties" />
+                        <label for="HasBreathDificulties"></label>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="row no-gutters scse-form-group" id="neonatalBackground-Ictericia" data-dependency="Sick">
+                <div class="col-sm-7">
+                    <label>Ictericia</label>
+                </div>
+                <div class="col-sm-5">
+                    <span class="switch switch-sm">
+                        <input id="Ictericia" type="checkbox" class="switch" checked="@Model.Ictericia" />
+                        <label for="Ictericia"></label>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="row no-gutters scse-form-group" id="neonatalBackground-Hipoglicemy" data-dependency="Sick">
+                <div class="col-sm-8">
+                    <label>Hipoglicemia</label>
+                </div>
+                <div class="col-sm-4">
+                    <span class="switch switch-sm">
+                        <input id="Hipoglicemy" type="checkbox" class="switch" checked="@Model.Hipoglicemy" />
+                        <label for="Hipoglicemy"></label>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="row no-gutters scse-form-group" id="neonatalBackground-Seizures" data-dependency="Sick">
+                <div class="col-sm-8">
+                    <label>Convulsiones</label>
+                </div>
+                <div class="col-sm-4">
+                    <span class="switch switch-sm">
+                        <input id="Seizures" type="checkbox" class="switch" checked="@Model.Seizures" />
+                        <label for="Seizures"></label>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="row no-gutters scse-form-group" id="neonatalBackground-Cyanosis" data-dependency="Sick">
+                <div class="col-sm-7">
+                    <label>Cianosis</label>
+                </div>
+                <div class="col-sm-5">
+                    <span class="switch switch-sm">
+                        <input id="Cyanosis" type="checkbox" class="switch" checked="@Model.Cyanosis" />
+                        <label for="Cyanosis"></label>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-2">
+            <div class="row no-gutters scse-form-group" id="neonatalBackground-Incubator" data-dependency="Sick">
+                <div class="col-sm-7">
+                    <label>Incubadora</label>
+                </div>
+                <div class="col-sm-5">
+                    <span class="switch switch-sm">
+                        <input id="Incubator" type="checkbox" class="switch" checked="@Model.Incubator" data-requireInit="true" />
+                        <label for="Incubator"></label>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-2">
+            <div id="neonatalBackground_TimeInIncubator" class="scse-form-group pt-2" data-control="">
+                    <input class="scse-form-control" type="text" required>
+                    <label class="animated-label">Peso anterior</label>
+                   <span class="scse-alert expand" data-alert="" data-message=""><i class="fas fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4" style="margin-top: 20px;">
+            <div class="row no-gutters scse-form-group" id="neonatalBackground-HospitalizationRequired">
+                <div class="col-sm-9">
+                    <label>Requirió hospitalización</label>
+                </div>
+                <div class="col-sm-3">
+                    <span class="switch switch-sm">
+                        <input id="HospitalizationRequired" type="checkbox" class="switch" checked="@Model.HospitalizationRequired" data-requireInit="true" />
+                        <label for="HospitalizationRequired"></label>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-2">
+            <div id="neonatalBackground-HospitalizedTime" class="scse-ce-form" data-type="L" data-dependency="HospitalizationRequired">
+               <div class="scse-form-group">
+                    <input class="scse-form-control" type="text" asp-for="HospitalizedTime" data-required="true"  />
+                    <label class="animated-label" for="HospitalizedTime">Tiempo/días</label>
+                </div>
+
+            </div>
+        </div>
+        <div class="ExpandableTextArea col-6 neonatalObservationsExpandible" data-expandedclass="col-12" data-defaultclass="col-6">
+            <div class="form-group" data-dependency="HospitalizationRequired">
+
+                <label class="col-form-label">Observaciones</label>
+                <div class="containerTextarea">
+                    <textarea id="neonatalBackground-Observations" rows="1" class="form-control" asp-for="Observations" data-required="true"></textarea>
+                    <img class="ExpandableContainerToggle" src="~/images/FlechaB.png">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4" style"margin-top:16px;">
+            <div class="row no-gutters scse-form-group" id="neonatalBackground-ReceivedMechanicalVentilation">
+                <div class="col-sm-9">
+                    <label>Recibió ventilación mecánica</label>
+                </div>
+                <div class="col-sm-3">
+                    <span class="switch switch-sm">
+                        <input id="ReceivedMechanicalVentilation" type="checkbox" class="switch" checked="@Model.ReceivedMechanicalVentilation" data-requireInit="true" />
+                        <label for="ReceivedMechanicalVentilation"></label>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="form-group row" id="neonatalBackground-MechanicalVentilationType" data-dependency="ReceivedMechanicalVentilation">
+                <label class="col-2 col-form-label pr-0 pt-2" style="margin-top:8px;">Tipo</label>
+                <div class="col-10 pt-2 pl-0">
+                    <label class="containeradio">
+                        <input type="radio" checked="checked" asp-for="MechanicalVentilationType" id="MechanicalVentilationType-invasive" value="Invasive">
+                        <span class="checkmark"></span>
+                        <label>Invasiva</label>
+                    </label>
+                    <label class="containeradio">
+                        <input type="radio" asp-for="MechanicalVentilationType" id="MechanicalVentilationType-nonInvasive" value="NonInvasive">
+                        <span class="checkmark"></span>
+                        <label>No invasiva </label>
+                    </label>
+                    <label class="containeradio">
+                        <input type="radio" asp-for="MechanicalVentilationType" id="MechanicalVentilationType-other" value="Other">
+                        <span class="checkmark"></span>
+                        <label>Otra </label>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ExpandableTextArea col-3 neonatalWichMechanicalVentilationTypeExpandible" data-expandedclass="col-12" data-defaultclass="col-3" data-dependency="ReceivedMechanicalVentilation">
+            <div class="form-group" data-dependency="Other">
+                <label class="col-form-label">¿Cuáles?</label>
+                <div class="containerTextarea">
+                    <textarea id="neonatalBackground-WichMechanicalVentilationTypeExpandible" rows="2" class="form-control" data-required="true" ></textarea>
+                    <img class="ExpandableContainerToggle" src="~/images/FlechaB.png">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr class="mr-3 my-1" style="border-top: 1px dashed #c2c1c7">
+    <div class="row dashedBorderRow">
+        <div class="col-10 cleanPadding">
+            <label class="label pr-0 pt-2" style="margin-top: 15px;padding-left: 0px;"><strong>Tratamiento para las dificultades respiratorias</strong></label>
+        </div>
+        <button class="backgroundsCommonBtn add" style="right:0px;" type="button" id="addTreatmentButton">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+    </div>
+    <div class="row">
+        <div class=" col-6">
+            <div id="neonatalBackground-Medicine" class="scse-ce-form" data-type="L">
+                <input class="inputBLine col-12 fields" type="text" placeholder="Medicamento" id="neonatalBackground-MedicineInput" />
+            </div>
+        </div>
+        <div class=" col-3">
+            <div id="neonatalBackground-MedicineDose" class="scse-ce-form" data-type="L">
+                <input class="inputBLine col-12 fields" type="text" placeholder="Dosis" id="neonatalBackground-DoseInput" />
+            </div>
+        </div>
+        <div class=" col-3">
+            <div id="neonatalBackground-MedicineTime" class="scse-ce-form" data-type="L">
+                <input class="inputBLine col-12 fields" type="text" placeholder="Tiempo/dias" id="neonatalBackground-TimeInput" />
+            </div>
+        </div>
+    </div>
+    <div id="TreathmentForBreathDificultiesContainer">
+       
+            <div class="row" id="neonatalBackground-TreathmentForBreathDificulties-@item.Id" data-IsEditable="@item.IsEditable">
+                <div class=" col-6">
+                    <div id="neonatalBackground-Medicine-@item.Id" class="scse-ce-form" data-type="L">
+                        <input class="inputBLine col-12 fields" type="text" placeholder="Medicamento" value="@item.Medicine" readonly />
+                    </div>
+                </div>
+                <div class=" col-3">
+                    <div id="neonatalBackground-MedicineDose-@item.Id" class="scse-ce-form" data-type="L">
+                        <input class="inputBLine col-12 fields" type="text" placeholder="Dosis" value="@item.Dose" readonly />
+                    </div>
+                </div>
+                <div class=" col-3">
+                    <div id="neonatalBackground-MedicineTime-@item.Id" class="scse-ce-form" data-type="L">
+                        <input class="inputBLine col-12 fields" type="text" placeholder="Tiempo" value="@item.Frecuency" readonly />
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="neonatalBackground-TreathmentForBreathDificulties-1" data-IsEditable="false">
+                <div class=" col-6">
+                    <div id="neonatalBackground-Medicine-1" class="scse-ce-form" data-type="L">
+                        <input class="inputBLine col-12 fields" type="text" placeholder="Medicamento" value="acetaminofen" readonly />
+                    </div>
+                </div>
+                <div class=" col-3">
+                    <div id="neonatalBackground-MedicineDose-1" class="scse-ce-form" data-type="L">
+                        <input class="inputBLine col-12 fields" type="text" placeholder="Dosis" value="50 mg" readonly />
+                    </div>
+                </div>
+                <div class=" col-3">
+                    <div id="neonatalBackground-MedicineTime-1" class="scse-ce-form" data-type="L">
+                        <input class="inputBLine col-12 fields" type="text" placeholder="Tiempo" value="2" readonly />
+                    </div>
+                </div>
+            </div>
+			
+			<div class="row" id="neonatalBackground-TreathmentForBreathDificulties-2" data-IsEditable="false">
+                <div class=" col-6">
+                    <div id="neonatalBackground-Medicine-2" class="scse-ce-form" data-type="L">
+                        <input class="inputBLine col-12 fields" type="text" placeholder="Medicamento" value="ibuprofeno" readonly />
+                    </div>
+                </div>
+                <div class=" col-3">
+                    <div id="neonatalBackground-MedicineDose-2" class="scse-ce-form" data-type="L">
+                        <input class="inputBLine col-12 fields" type="text" placeholder="Dosis" value="90 mg" readonly />
+                    </div>
+                </div>
+                <div class=" col-3">
+                    <div id="neonatalBackground-MedicineTime-2" class="scse-ce-form" data-type="L">
+                        <input class="inputBLine col-12 fields" type="text" placeholder="Tiempo" value="75" readonly />
+                    </div>
+                </div>
+            </div>
+       
+    </div>
+    <hr class="mr-3 my-1" style="border-top: 1px dashed #c2c1c7">
+    <div class="row dashedBorderRow">
+        <div class="col-10 cleanPadding"><label class="label pr-0 pt-2" style="margin-top: 15px;padding-left: 0px;"><strong>Problemas presentados al nacer</strong></label></div>
+
+        <button class="backgroundsCommonBtn add" style="right:0px;" type="button" id="addBirthTroubleButton">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <div class="row">
+        <div class=" col-12">
+            <div id="neonatalBackground-Diagnostic" class="scse-ce-form" data-type="L">
+                <input class="inputBLine col-12 fields" type="text" placeholder="Diagnostico" id="neonatalBackground-DiagnosticInput" />
+            </div>
+        </div>
+
+    </div>
+    <div id="BirthTroublesContainer">
+
+       
+            <div class="row" id="neonatalBackground-BirthTroubles-@item.Id" data-IsEditable="@item.IsEditable">
+                <div class=" col-12">
+                    <div id="neonatalBackground-Diagnostic-@item.Id" class="scse-ce-form" data-type="L">
+                        <input class="inputBLine col-12 fields" type="text" placeholder="Diagnostico" value="@item.Description" readonly />
+                    </div>
+                </div>
+            </div>
+       
+
+    </div>
+
+</div>
+
+<div id="planificacion">
+        <div id="bgplanning" data-background="" style="position:relative">
+                <div class="row mx-1">
+                    <div class="col-2 font-weight-bold" style="padding-top: 14px;padding-left: 15px;">
+                        <div class="scse-form-group pt-2">Planificación</div>
+                    </div>
+            
+                   
+                    <div class="col-6">
+                        <div class="row no-gutters scse-form-group" id="BackgroundPlanning-hasUsedPlanningMethods">
+            
+                            <div class="col-sm-12">
+                                <span class="switch switch-sm">
+                                    <label for="HasUsedPlanningMethods">Usa o ha usado métodos anticonceptivos</label>
+                                    <input id="HasUsedPlanningMethods" type="checkbox" class="switch" checked="@Model.HasUsedPlanningMethods" data-requireInit="true" />
+                                    <label for="HasUsedPlanningMethods"></label>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="backgroundsCommonBtn add" type="button" id="addPlanningMethodButton" data-dependency="HasUsedPlanningMethods">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="row mx-1" data-dependency="HasUsedPlanningMethods">
+            
+                    <div class="col-3">
+                        <div class="scse-form-group pt-2" data-control="" data-code="pla_metod" data-type="SE">
+                            <select class="scse-form-control scse-select" id="methodSelect">
+                                <option value="v1"></option>
+                                <option value="Cuno" selected=""> unito  </option>
+                                <option value="Cdos" selected=""> dosito  </option>
+                                <option value="Ctres" selected=""> trescito  </option>
+                                
+                            </select>
+                            <label class="animated-label" for="Method">Método</label>
+                        </div>
+                    </div>       
+                    <div class="col-3">
+                        <div class="scse-form-group pt-2" data-dependency="Incubator" data-control="" data-code="pla_tdu" data-type="TB">
+                            <input class="scse-form-control inputBLine" type="text" id="TimeOfUse" required value="@Model.ActuallyObservation.TimeOfUse">
+                            <label class="animated-label" for="TimeOfUse">Tiempo de uso</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="row no-gutters scse-form-group" id="BackgroundPlanning-isUsingActually">
+                            <div class="col-sm-12">
+                                <span class="switch switch-sm">
+                                    <label for="IsUsingActually">Uso actual </label>
+                                    <input id="IsUsingActually" type="checkbox" class="switch" checked="@Model.ActuallyObservation.IsUsingActually" data-requireInit="true" />
+                                    <label for="IsUsingActually"></label>
+                                </span>
+                            </div>
+                        </div>
+            
+                    </div>
+                    <div class="col-3">
+                        <div class="row no-gutters scse-form-group" id="BackgroundPlanning-isAdherency">
+            
+                            <div class="col-sm-12">
+                                <span class="switch switch-sm">
+                                    <label for="IsAdherency">Adherencia</label>
+                                    <input id="IsAdherency" type="checkbox" class="switch" checked="@Model.ActuallyObservation.IsAdherency" data-requireInit="true" />
+                                    <label for="IsAdherency"></label>
+                                </span>
+                            </div>
+                        </div>
+            
+                    </div>
+            
+                </div>
+                <div class="row mx-1" data-dependency="HasUsedPlanningMethods">
+                    
+                    <div class="col-1 pr-0">
+                    <div class="form-group mb-0">
+                        <label class="col-form-label pt-0">Observaciones</label>
+                    </div>
+                    </div>
+                    <div class="ExpandableTextArea col-11" data-expandedclass="col-12" data-defaultclass="col-11">
+                        <div class="form-group">
+                            <div class="containerTextarea">
+                                <textarea rows="1" class="form-control" id="BackgroundPlanning-Observations" value="@Model.ActuallyObservation.Observations" name="BackgroundPlanning-Observations" data-required="true" style="min-height: 40px"></textarea>
+                                <img class="ExpandableContainerToggle" src="~/images/FlechaB.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <hr class="striped-border">
+                    <div id="ObservationsListContainer" data-type="TA">
+                         
+                            <div class="row dashedBorderRow">
+                                    <div class="col-12">
+                                        <label class="label pr-0 pt-2"><strong>@observationItem.UserName</strong> - @observationItem.ObsevationDate.ToShortDateString()</label>
+                                    </div>
+                                    <div class=" col-2">
+                                        <label name="method">@observationItem.Method</label>
+                                    </div>
+                                    <div class=" col-2">
+                                        <label name="timeofuse">@observationItem.TimeOfUse</label>
+                                    </div>
+                                    <div class=" col-2">
+                                        <label name="inuse">@{ var des = observationItem.IsUsingActually == true ? "En Uso" : "No esta en uso";}@des</label>
+                                    </div>
+                                    <div class=" col-2">
+                                        <label name="adherency">
+                                            @{ var adh = observationItem.IsAdherency == true ? "Adherencia" : "No Adherencia";}@adh</label>
+                                    </div>
+                                    <div class=" col-4">
+                                        <label name="observation" >@observationItem.Observations</label>
+                                    </div>
+                                </div>
+                                <div class="row dashedBorderRow">
+                                        <div class="col-12">
+                                            <label class="label pr-0 pt-2"><strong>@observationItem.UserName</strong> - @observationItem.ObsevationDate.ToShortDateString()</label>
+                                        </div>
+                                        <div class=" col-2">
+                                            <label name="method">@observationItem.Method</label>
+                                        </div>
+                                        <div class=" col-2">
+                                            <label name="timeofuse">@observationItem.TimeOfUse</label>
+                                        </div>
+                                        <div class=" col-2">
+                                            <label name="inuse">@{ var des = observationItem.IsUsingActually == true ? "En Uso" : "No esta en uso";}@des</label>
+                                        </div>
+                                        <div class=" col-2">
+                                            <label name="adherency">
+                                                @{ var adh = observationItem.IsAdherency == true ? "Adherencia" : "No Adherencia";}@adh</label>
+                                        </div>
+                                        <div class=" col-4">
+                                            <label name="observation" >@observationItem.Observations</label>
+                                        </div>
+                                    </div>
+                                    <div class="row dashedBorderRow">
+                                            <div class="col-12">
+                                                <label class="label pr-0 pt-2"><strong>@observationItem.UserName</strong> - @observationItem.ObsevationDate.ToShortDateString()</label>
+                                            </div>
+                                            <div class=" col-2">
+                                                <label name="method">@observationItem.Method</label>
+                                            </div>
+                                            <div class=" col-2">
+                                                <label name="timeofuse">@observationItem.TimeOfUse</label>
+                                            </div>
+                                            <div class=" col-2">
+                                                <label name="inuse">@{ var des = observationItem.IsUsingActually == true ? "En Uso" : "No esta en uso";}@des</label>
+                                            </div>
+                                            <div class=" col-2">
+                                                <label name="adherency">
+                                                    @{ var adh = observationItem.IsAdherency == true ? "Adherencia" : "No Adherencia";}@adh</label>
+                                            </div>
+                                            <div class=" col-4">
+                                                <label name="observation" >@observationItem.Observations</label>
+                                            </div>
+                                        </div>
+                        
+                    </div>
+                    <hr class="striped-border" />
+            </div>
+        </div>
+
+</body>
+
+
+<!-- scripts principales -->
+<script src="./lib/jquery/dist/jquery.js"></script>
+<!-- @*<script src="https://cdnjs.cloudflare.cjom/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>*@ -->
+<script src="./lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="./lib/jquery/dist/jquery-ui.js"></script>
+<!-- @*<script src="./lib/bootstrap4/js/bootstrap.min.js"></script>*@ -->
+<!-- @*<script src="./lib/bootstrap/dist/js/bootstrap.js"></script>*@ -->
+<script src="./js/vendor-validation.min.js" asp-append-version="true"></script>
+<script src="./js/vendor.min.js" asp-append-version="true"></script>
+<script src="./js/chartist.min.js" asp-append-version="true"></script>
+<script src="./js/site.js" asp-append-version="true"></script>
+<!-- fin scripts pincipales -->
+<script src="./lib/tagify/dist/tagify.min.js" type="text/javascript"></script>
+<script src="./lib/tagify/dist/jQuery.tagify.min.js" type="text/javascript"></script>
+<script src="https://unpkg.com/mathjs/dist/math.min.js"></script>
+<script src="./js/ExpandableTextArea.js"  type="text/javascript"></script>
+
+    <script src="./js/BackgroundControl.js" type="text/javascript"></script>
+    <script src="./js/Background.js" type="text/javascript"></script>
+    <script src="./js/BackgroundComponent.js" type="text/javascript"></script>
+    <script src="./js/ToxicHabitsBackground.js" type="text/javascript"></script>
+    <script src="./js/PathologicalBackground.js" type="text/javascript"></script>
+    <script src="./js/SurgicalBackground.js" type="text/javascript"></script>
+    <script src="./js/PregnancyBackground.js" type="text/javascript"></script>
+    <script src="./js/InmunizationsBackground.js" type="text/javascript"></script>
+    <script src="./js/chartist-plugin-legend.js" type="text/javascript"></script>
+    <script src="./js/chartist-plugin-axistitle.js" type="text/javascript"></script>
+    
+    <script src="./js/chartHelper.js" type="text/javascript"></script>
+
+
+    <!-- scripting  -->
+    <script>
+        $(document).ready(function() {
+            let background = new BackgroundsComponent();
+        })
+    </script>
+
+    <!--  -->
+
+    </html
