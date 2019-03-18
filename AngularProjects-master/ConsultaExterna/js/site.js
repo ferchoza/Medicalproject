@@ -17,11 +17,11 @@ function setChart()
 {
 	dataValues ={
 		series: [
-			{ "name": "Money A", "data": [60000, 40000, 80000, 70000] },
-			{ "name": "Money B", "data": [40000, 30000, 70000, 65000] },
-			{ "name": "Money C", "data": [8000, 3000, 10000, 6000] },
-			{ "name": "Money D", "data": [15000, 80000, 60000, 40000] },
-			{ "name": "Money E", "data": [80000, 60000, 40000, 20000] }
+			{ "name": "Money A", "data": [60, 4, 8, 70] },
+			{ "name": "Money B", "data": [40, 3, 7, 65] },
+			{ "name": "Money C", "data": [80, 30, 10, 60] },
+			{ "name": "Money D", "data": [15, 80, 60, 40] },
+			{ "name": "Money E", "data": [80, 6, 40, 20] }
 		 ],
 		unidades:'mm/Hg',
 		measurementPlaces : ['muñeca','Brazo','muñeca','Brazo','muñeca','Brazo'],

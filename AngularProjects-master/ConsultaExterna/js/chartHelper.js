@@ -5,7 +5,7 @@ function ChartHelper(container,title,data) {
     this.series = data.series;
     this.measurementPlaces = data.measurementPlaces ;
     this.paddingChart ;
-    this.Units = 'data.unidades';
+    this.Units = data.unidades;
     this.colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:15px;height:9px;background-color:' + color + '"></span>';
     this.colorbar =['#d70206',
     '#f05b4f',
@@ -28,7 +28,7 @@ ChartHelper.prototype = {
             fullWidth: true,
             chartPadding: {
                 right: 0,
-                left:20
+                left:25
             },
             axisY: {
                 onlyInteger: true
